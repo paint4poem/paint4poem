@@ -1,0 +1,44 @@
+CONFIG_NAME: 'lambda50/title_image'
+
+DATASET_NAME: 'title_image_cycle_bert'
+DATA_DIR: '../data/title_image'
+GPU_ID: 0
+WORKERS: 1
+
+
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    TRAINER: 'CycleGANTrainer_BERT'
+    FLAG: True
+    NET_G: ''  # '../models/bird_AttnGAN2.pth'
+    B_NET_D: True
+    BATCH_SIZE: 20  # 22
+    MAX_EPOCH: 1000
+    SNAPSHOT_INTERVAL: 25
+    DISCRIMINATOR_LR: 0.0002
+    GENERATOR_LR: 0.0002
+    #
+    NET_E: '../output/pretrain/pretrain_cycle_bert/title_image_STREAM_2020_06_22_19_50_11/Model/text_encoder100.pth'
+    #NET_E: 'STREAMencoders/birdcycle/text_encoder200.pth'
+    SMOOTH:
+        GAMMA1: 4.0  # 1,2,5 good 4 best  10&100bad
+        GAMMA2: 5.0
+        GAMMA3: 10.0  # 10good 1&100bad
+        LAMBDA: 50.0
+
+CNN_RNN:
+    HIDDEN_DIM: 256
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 768
+    CAPTIONS_PER_IMAGE: 1
+    WORDS_NUM: 26

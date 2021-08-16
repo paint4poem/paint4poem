@@ -1,0 +1,33 @@
+CONFIG_NAME: 'lambda50/famous_poem'
+
+DATASET_NAME: 'famous_poem_cycle'
+DATA_DIR: '../data/famous_poem'
+GPU_ID: 0
+WORKERS: 1
+
+B_VALIDATION: True  # True  # False
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    TRAINER: 'CycleGANTrainer'
+    FLAG: False
+    NET_G: '../output/train/lambda50/famous_poem/famous_poem_cycle_2020_06_24_09_39_36/Model/netG_epoch_800.pth'
+    B_NET_D: False
+    BATCH_SIZE: 100
+    NET_E: '../output/pretrain/pretrain_cycle/famous_poem_STREAM_2020_06_22_21_51_12/Model/text_encoder10.pth'
+
+CNN_RNN:
+    HIDDEN_DIM: 256
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 768
+    CAPTIONS_PER_IMAGE: 1
+    WORDS_NUM: 50

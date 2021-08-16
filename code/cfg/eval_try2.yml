@@ -1,0 +1,31 @@
+CONFIG_NAME: 'atten/famous_title'
+
+DATASET_NAME: 'atten_zikai_title'
+DATA_DIR: '../data/Paint4Poem-Zikai-caption-subset/title_image'
+GPU_ID: 0
+WORKERS: 1
+
+B_VALIDATION: True  # True  # False
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    TRAINER: 'condGANTrainer'
+    FLAG: False
+    NET_G: '../output/attn/zikai_title/netG_epoch_400.pth'
+    B_NET_D: False
+    BATCH_SIZE: 10
+    NET_E: '../output/attn/zikai_title/text_encoder400.pth'
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 1
+    WORDS_NUM: 16

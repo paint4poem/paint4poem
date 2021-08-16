@@ -1,0 +1,47 @@
+CONFIG_NAME: 'attn2'
+
+DATASET_NAME: 'zikai_title'
+DATA_DIR: '../data/Paint4Poem-Zikai-caption-subset/title_image'
+GPU_ID: 0
+WORKERS: 1
+
+
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    FLAG: True
+    NET_G: ''  # '../models/bird_AttnGAN2.pth'
+    B_NET_D: True
+    BATCH_SIZE: 10  # 22
+    MAX_EPOCH: 600
+    SNAPSHOT_INTERVAL: 50
+    DISCRIMINATOR_LR: 0.0002
+    GENERATOR_LR: 0.0002
+    #
+    NET_E: '../output/attn/zikai_title/text_encoder400.pth'
+    SMOOTH:
+        GAMMA1: 4.0  # 1,2,5 good 4 best  10&100bad
+        GAMMA2: 5.0
+        GAMMA3: 10.0  # 10good 1&100bad
+        LAMBDA: 0.5
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+
+LOSS:
+    D_w: 4
+    G_w: 4
+    D_runtime: 1
+    G_runtime: 2
+    show_gen: 5
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 1

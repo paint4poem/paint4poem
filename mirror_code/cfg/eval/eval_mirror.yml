@@ -1,0 +1,37 @@
+CONFIG_NAME: 'mirror/famous_poem'
+
+DATASET_NAME: 'mirror_zikai_poem'
+DATA_DIR: '../data/Paint4Poem-Zikai-poem-subset/poem_image'
+GPU_ID: 0
+WORKERS: 1
+
+B_VALIDATION: True  # True  # False
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    TRAINER: 'condGANTrainer'
+    FLAG: False
+    NET_G: '../output/mirror_train/lambda50/poem_image/poem_image_cycle_2021_07_06_09_50_22/Model/netG_epoch_1000.pth'
+    #'../output/attn/zikai_poem/netG_epoch_600.pth'
+    #'../output/TF_poem/tf_from_caption/Model/netG_epoch_650.pth'
+    #'../output/5_26_colab/second_from_stratch/Model/netG_epoch_800.pth'
+    #'../output/attn/zikai_poem/netG_epoch_600.pth'
+
+    B_NET_D: False
+    BATCH_SIZE: 1
+    NET_E: '../output/pretrain/pretrain_cycle/poem_image_STREAM_2021_07_06_08_15_05/Model/text_encoder300.pth'
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 1
+    WORDS_NUM: 16
+
