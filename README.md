@@ -6,7 +6,7 @@ Pytorch implementation for paper Paint4Poem: a Dataset for Artistic Visualizatio
 
 Dowload our poem, caption, web dataset and save them to data/
 
-<img src="dataset-4-examples.pdf" width="900px" height="350px"/>
+<img src="dataset-4-examples.png" width="900px" height="350px"/>
 
 ## Training
 
