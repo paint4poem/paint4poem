@@ -34,7 +34,7 @@ Dowload our poem, caption, web dataset and save them to data/
 
 
 ## Generated image examples
-<img src="exp-benchmark.png" width="900px" height="900px"/>
+<img src="exp-benchmark.png" width="900px" height="800px"/>
 
 
 
