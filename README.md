@@ -1,22 +1,23 @@
 # paint4poem
 
 Pytorch implementation for paper Paint4Poem: a Dataset for Artistic Visualizationof Classical Chinese Poems.
+Paint4poem dataset sample: [Sample data](https://surfdrive.surf.nl/files/index.php/s/rKffQJC9IVE5sKD).
+
+<img src="dataset-4-examples.png" width="900px" height="350px"/>
 
 ## Data
 
 Dowload our poem, caption, web dataset and save them to data/
 
-<img src="dataset-4-examples.png" width="900px" height="350px"/>
-
 ## Training
 
 - Pre-train DAMSM models:
-  - For poem dataset: `python pretrain_DAMSM.py --cfg cfg/DAMSM/zikai_poem.yml --gpu 0
-  - For caption dataset: `python pretrain_DAMSM.py --cfg cfg/DAMSM/zikai_title.yml --gpu 1
+  - For poem dataset: `python pretrain_DAMSM.py --cfg cfg/DAMSM/zikai_poem.yml --gpu 0`
+  - For caption dataset: `python pretrain_DAMSM.py --cfg cfg/DAMSM/zikai_title.yml --gpu 1`
  
 - Train AttnGAN models:
   - For poem dataset: `python main_poem.py --cfg cfg/zikai_poem_attn2_.yml --gpu 2`
-  - For caption dataset: `python main.py --cfg cfg/zikai_title_attn2_.yml --gpu 3`
+  - For caption dataset: `python main_poem.py --cfg cfg/zikai_title_attn2_.yml --gpu 3`
 
 - `*.yml` files are example configuration files for training/evaluation our models.
 
@@ -27,9 +28,15 @@ Dowload our poem, caption, web dataset and save them to data/
 ## Validation
 - To generate images for all captions in the validation dataset, change B_VALIDATION to True in the eval_*.yml. and then run `python main_poem.py --cfg cfg/eval_try.yml --gpu 1`
 - We compute inception score for models trained on coco using [improved-gan/inception_score](https://github.com/openai/improved-gan/tree/master/inception_score).
-- We compute R_precision score using 
-- We compute global effect and Local partern using
-- We compute FID using 
+- We compute R_precision score based on [R-precision from DM-GAN](https://github.com/MinfengZhu/DM-GAN/blob/master/code/trainer.py).
+- We compute global effect and Local partern based on paper [Evaluate and improve the quality of neural style transfer](https://www.sciencedirect.com/science/article/abs/pii/S1077314221000473#!).
+- We compute FID using [pytorch-fid](https://github.com/mseitzer/pytorch-fid).
+
+
+## Generated image examples
+<img src="exp-benchmark.png" width="900px" height="350px"/>
+
+<img src="exp-transfer-learning.png" width="900px" height="350px"/>
 
 
 ## Contributing
