@@ -57,7 +57,7 @@ We evaluate the quality of generated paintings regarding their pictorial quality
 ### Stylistic quality
 - We compute global effect and Local partern based on paper [Evaluate and improve the quality of neural style transfer](https://www.sciencedirect.com/science/article/abs/pii/S1077314221000473#!).
 
-## Semantic relevance
+### Semantic relevance
 - We compute R_precision score based on [R-precision from DM-GAN](https://github.com/MinfengZhu/DM-GAN/blob/master/code/trainer.py).
 
 
