@@ -19,7 +19,7 @@ Download the [complete data](https://drive.google.com/drive/folders/1ySx3xTq1Lza
 
 # Examples
 
-<img src="dataset-4-examples.png" width="800px" height="400px"/>
+<img src="Images/dataset-4-examples.png" width="800px" height="400px"/>
 
 
 # Baselines
@@ -44,7 +44,7 @@ Download the [complete data](https://drive.google.com/drive/folders/1ySx3xTq1Lza
 
 
 ### Examples of generated paintings
-<img src="exp-benchmark.png" width="900px" height="800px"/>
+<img src="Images/exp-benchmark.png" width="900px" height="800px"/>
 
 
 # Evaluation
