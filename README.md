@@ -11,7 +11,8 @@ Paint4Poem consists of three sets:
 
 We expect the first two sets to help learning the artist painting style of Feng Zikai as it contains his most paintings, and the third one to help learning the semantic relevance between poems and paintings. 
 
-We welcome your discussion and modelling on this dataset.
+See more details in our paper [**Paint4Poem: A Dataset for Artistic Visualization of Classical Chinese Poems**](https://arxiv.org/abs/2109.11682). We welcome your discussion and modelling on this dataset! 
+Contact [**Dan Li**](d.li@uva.nl) or [**Shuai Wang**](shuai.wang@student.uva.nl).
 
 # Download
 
